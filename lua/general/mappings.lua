@@ -43,6 +43,8 @@ H.config = function()
     w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
   }
 
-  lvim.builtin.which_key.mappings["z"] = { ":Goyo<cr>", "Zen Mode" }
+  -- lvim.builtin.which_key.mappings["z"] = { ":Goyo<cr>", "Zen Mode" }
+
+  lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen Mode" }
 end
 return H

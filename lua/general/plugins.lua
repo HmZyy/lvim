@@ -12,8 +12,15 @@ H.config = function()
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
     },
-    -- Goyo
-    { "junegunn/goyo.vim" },
+
+    -- ZenMode
+    {
+      "folke/zen-mode.nvim",
+      config = function()
+        require("plugins.zenmode").config()
+      end,
+      event = "BufRead",
+    },
 
     -- Markdown Preview
     { 'iamcco/markdown-preview.nvim',
