@@ -10,6 +10,7 @@ H.config = function()
 
   lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
   lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+  lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
   -- unmap a default keymapping vim.keymap.del("n", "<C-Up>")
   -- override a default keymapping
@@ -47,5 +48,7 @@ H.config = function()
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen Mode" }
   lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<cr>", " Cheat" }
   lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", " Symbole Outline" }
+
+  lvim.builtin.which_key.mappings[" "] = { "<cmd>Telescope buffers<cr>", " Select Buffer" }
 end
 return H
