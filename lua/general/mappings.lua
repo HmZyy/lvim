@@ -46,5 +46,6 @@ H.config = function()
   -- lvim.builtin.which_key.mappings["z"] = { ":Goyo<cr>", "Zen Mode" }
   lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", " Zen Mode" }
   lvim.builtin.which_key.mappings["?"] = { "<cmd>Cheat<cr>", " Cheat" }
+  lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", " Symbole Outline" }
 end
 return H

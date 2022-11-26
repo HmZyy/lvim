@@ -29,6 +29,17 @@ H.config = function()
     -- NVim Cheat
     { 'RishabhRD/popfix' },
     { 'RishabhRD/nvim-cheat.sh' },
+
+    -- Symbols Outline
+    { 'simrat39/symbols-outline.nvim' },
+
+    {
+      "folke/twilight.nvim",
+      config = function()
+        require("plugins.twilight").config()
+      end
+    }
+
   }
 end
 return H

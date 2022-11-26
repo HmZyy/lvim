@@ -6,6 +6,9 @@ H.config = function()
   -- Telescope config
   require("plugins.dashboard").config()
 
+  -- Symbole outline
+  require("plugins.symbols-outline").config()
+
 
 end
 return H
