@@ -44,3 +44,7 @@ require("general.lsp").config()
 -- Plugins Setup
 -- =========================================
 require("general.plugins").config()
+
+-- Plugins Configuration
+-- =========================================
+require("plugins.all").config()
