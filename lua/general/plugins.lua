@@ -33,12 +33,18 @@ H.config = function()
     -- Symbols Outline
     { 'simrat39/symbols-outline.nvim' },
 
+    -- Twilight
     {
       "folke/twilight.nvim",
       config = function()
         require("plugins.twilight").config()
       end
-    }
+    },
+
+    -- Colorizer
+    { 'norcalli/nvim-colorizer.lua' }
+
+
 
   }
 end

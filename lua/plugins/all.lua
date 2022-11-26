@@ -9,6 +9,8 @@ H.config = function()
   -- Symbole outline
   require("plugins.symbols-outline").config()
 
+  -- Colorizer
+  require("colorizer").setup()
 
 end
 return H
