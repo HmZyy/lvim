@@ -22,9 +22,8 @@ M.config = function()
       tmux = { enabled = not lvim.builtin.tmux_lualine },
       twilight = { enabled = true },
       kitty = {
-        enabled = false,
-        -- font = "+2", -- font size increment
-        font = "+12", -- font size increment
+        enabled = true,
+        font = "+2", -- font size increment
       },
     },
     on_open = function()

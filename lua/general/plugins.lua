@@ -25,6 +25,10 @@ H.config = function()
     -- Markdown Preview
     { 'iamcco/markdown-preview.nvim',
       run = "cd app && npm install" },
+
+    -- NVim Cheat
+    { 'RishabhRD/popfix' },
+    { 'RishabhRD/nvim-cheat.sh' },
   }
 end
 return H
