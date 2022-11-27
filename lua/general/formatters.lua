@@ -5,6 +5,7 @@ H.config = function()
   formatters.setup {
     { command = "clang-format", filetypes = { "cpp" }, extra_args = { "--style", "file" } },
     { command = "clang-format", filetypes = { "java" }, extra_args = { "--style", "Google" } },
+    { command = "prettier", filetypes = { "javascript" }, extra_args = { "--print-with", "100" } },
     -- { command = "black", filetypes = { "python" } },
     -- { command = "isort", filetypes = { "python" } },
     -- {
