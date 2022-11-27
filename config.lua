@@ -23,7 +23,7 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Theme
 -- =========================================
-require("general.theme").config()
+require("general.appearance").config()
 
 -- Keybindings
 -- =========================================

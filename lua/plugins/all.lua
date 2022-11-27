@@ -12,5 +12,8 @@ H.config = function()
   -- Colorizer
   require("colorizer").setup()
 
+  -- Lualine
+  require("plugins.lualine").config()
+
 end
 return H
