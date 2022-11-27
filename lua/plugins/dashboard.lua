@@ -257,6 +257,7 @@ function H.config()
           lvim.icons.ui.Gear .. "  Configuration",
           "<CMD>edit " .. require("lvim.config"):get_user_config_path() .. " <CR>"
         ),
+        button("x", lvim.icons.ui.Gear .. "  Custom Config", "<CMD>Telescope configs theme=dropdown<CR>"),
       },
     }
   end

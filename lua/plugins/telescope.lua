@@ -1,32 +1,60 @@
+local pickers = require "telescope.pickers"
+local finders = require "telescope.finders"
+local previewers = require "telescope.previewers"
+local conf = require("telescope.config").values
+local actions = require "telescope.actions"
+local action_state = require "telescope.actions.state"
+local make_entry = require "telescope.make_entry"
+local builtin = require "telescope.builtin"
+
 local H = {}
-H.config = function()
-  local pickers = require "telescope.pickers"
-  local finders = require "telescope.finders"
-  local conf = require("telescope.config").values
-  local actions = require "telescope.actions"
-  local action_state = require "telescope.actions.state"
-  -- our picker function: colors
-  local colors = function(opts)
-    opts = opts or {}
-    pickers.new(opts, {
-      prompt_title = "Configuration",
-      finder = finders.new_table {
-        results = { "formatters", "linters", "lsp", "mappings", "plugins", "theme" }
-      },
-      sorter = conf.generic_sorter(opts),
-      attach_mappings = function(prompt_bufnr, map)
-        actions.select_default:replace(function()
-          actions.close(prompt_bufnr)
-          local selection = action_state.get_selected_entry()
-          print(vim.inspect(selection))
-          -- vim.api.nvim_put({ selection[1] }, "", false, true)
-        end)
-        return true
-      end,
-    }):find()
+
+local configs = function(opts)
+
+  local sourced_file = require("plenary.debug_utils").sourced_filepath()
+  local base_directory = vim.fn.fnamemodify(sourced_file, ":h:h")
+  local general_directory = base_directory .. "/general/"
+
+  local globbed_files = vim.fn.globpath(general_directory, "*", true, true)
+  local acceptable_files = {}
+  for _, v in ipairs(globbed_files) do
+    table.insert(acceptable_files, vim.fn.fnamemodify(v, ":t"))
   end
 
-  -- to execute the function
-  -- colors(require("telescope.themes").get_dropdown {})
+  pickers
+      .new(opts, {
+        prompt_title = "Configuration",
+        finder = finders.new_table {
+          results = acceptable_files,
+          entry_maker = function(line)
+            return make_entry.set_default_entry_mt({
+              ordinal = line,
+              display = line,
+              filename = general_directory .. line,
+            }, opts)
+          end,
+        },
+        previewer = previewers.cat.new(opts),
+        sorter = conf.generic_sorter(opts),
+        attach_mappings = function(prompt_bufnr)
+          actions.select_default:replace(function()
+            local selection = action_state.get_selected_entry()
+            actions.close(prompt_bufnr)
+            local filename = general_directory .. selection.display
+            vim.api.nvim_exec(":e " .. filename, true)
+          end)
+
+          return true
+        end,
+      }):find()
+end
+
+-- H.dropdown = function()
+--   return H.configs(require("telescope.themes").get_dropdown {})
+-- end
+
+-- to execute the function
+H.config = function()
+  builtin.configs = configs
 end
 return H
