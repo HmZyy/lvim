@@ -54,7 +54,9 @@ H.config = function()
       config = function()
         require("plugins.neoclip").config()
       end,
-    }
+    },
+    -- Jupyter notebooks
+    { 'jupyter-vim/jupyter-vim' }
 
 
 

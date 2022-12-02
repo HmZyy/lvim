@@ -1,7 +1,7 @@
 local H = {}
 H.config = function()
   -- -- set additional linters
-  -- local linters = require "lvim.lsp.null-ls.linters"
+  -- local linters = require "lvim.l p.null-ls.linters"
   -- linters.setup {
   --   { command = "flake8", filetypes = { "python" } },
   --   {

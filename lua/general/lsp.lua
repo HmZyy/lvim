@@ -3,6 +3,9 @@ H.config = function()
   -- generic LSP settings
 
   lvim.lsp.diagnostics.virtual_text = false
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.offsetEncoding = { "utf-16" }
+  require("lspconfig").clangd.setup({ capabilities = capabilities })
 
   -- -- make sure server will always be installed even if the server is in skipped_servers list
   -- lvim.lsp.installer.setup.ensure_installed = {
