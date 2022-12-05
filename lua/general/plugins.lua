@@ -56,7 +56,10 @@ H.config = function()
       end,
     },
     -- Jupyter notebooks
-    { 'jupyter-vim/jupyter-vim' }
+    { 'jupyter-vim/jupyter-vim' },
+
+    -- Latex
+    { 'lervag/vimtex' }
 
 
 

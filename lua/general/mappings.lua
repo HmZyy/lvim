@@ -138,7 +138,15 @@ H.config = function()
         "Colorscheme with Preview",
       },
     },
+    L = {
+      name = '+Latex',
+      b = { ':VimtexCompile', 'build' },
+      c = { ':VimtexClean', 'clean' },
+      v = { ':VimtexView', 'view' },
+      t = { ':VimtexTocOpen', 'toc' },
+    }
   }
+
 
 
 end
