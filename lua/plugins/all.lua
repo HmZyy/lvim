@@ -15,5 +15,8 @@ H.config = function()
   -- Lualine
   require("plugins.lualine").config()
 
+  -- VimTex
+  require("plugins.vimtex").config()
+
 end
 return H

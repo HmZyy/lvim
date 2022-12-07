@@ -140,10 +140,10 @@ H.config = function()
     },
     L = {
       name = '+Latex',
-      b = { ':VimtexCompile', 'build' },
-      c = { ':VimtexClean', 'clean' },
-      v = { ':VimtexView', 'view' },
-      t = { ':VimtexTocOpen', 'toc' },
+      b = { '<cmd>VimtexCompile<cr>', 'build' },
+      c = { '<cmd>VimtexClean<cr>', 'clean' },
+      v = { '<cmd>VimtexView<cr>', 'view' },
+      t = { '<cmd>VimtexTocOpen<cr>', 'toc' },
     }
   }
 
