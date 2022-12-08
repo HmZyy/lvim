@@ -144,10 +144,22 @@ H.config = function()
       c = { '<cmd>VimtexClean<cr>', 'clean' },
       v = { '<cmd>VimtexView<cr>', 'view' },
       t = { '<cmd>VimtexTocOpen<cr>', 'toc' },
+    },
+    j = {
+      name = '+Jupyter',
+      c = { '<cmd>JupyterConnect<cr>', 'Connect' },
+      r = { '<cmd>JupyterRunFile<cr>', 'Run File' },
+      e = { '<cmd>JupyterSendCell<cr>', 'Execute Cell' },
+      l = { "<cmd>JupyterSendRange<cr>", 'Execute Line' },
+      i = { '<cmd>PythonImportThisFile<cr>', 'Import This File' },
+      d = { '<cmd>JupyterCd<cr>', 'Change Directory' },
     }
   }
 
-
+  lvim.builtin.which_key.vmappings = {
+    ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle" },
+    e = { "<Plug>JupyterRunVisual<cr>", 'Jupyter Execute Selection' },
+  }
 
 end
 return H
