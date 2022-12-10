@@ -58,8 +58,15 @@ H.config = function()
     -- Jupyter notebooks
     { 'jupyter-vim/jupyter-vim' },
 
-    -- Latex
-    { 'lervag/vimtex' }
+    -- Flutter
+    {
+      "akinsho/flutter-tools.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("plugins.flutter_tools").config()
+      end,
+      ft = "dart",
+    },
 
 
 
