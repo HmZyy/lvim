@@ -68,7 +68,20 @@ H.config = function()
       ft = "dart",
     },
 
-
+    -- Smooth Scrolling
+    {
+      'declancm/cinnamon.nvim',
+      config = function() require('cinnamon').setup({
+          default_keymaps = true, -- Create default keymaps.
+          extra_keymaps = false, -- Create extra keymaps.
+          extended_keymaps = true, -- Create extended keymaps.
+          override_keymaps = true, -- The plugin keymaps will override any existing keymaps.
+          always_scroll = true, -- Scroll the cursor even when the window hasn't scrolled.
+          centered = true, -- Keep cursor centered in window when using window scrolling.
+          hide_cursor = true, -- Hide the cursor while scrolling. Requires enabling termguicolors!
+        })
+      end
+    }
 
   }
 end
