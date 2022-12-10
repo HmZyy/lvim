@@ -81,7 +81,16 @@ H.config = function()
           hide_cursor = true, -- Hide the cursor while scrolling. Requires enabling termguicolors!
         })
       end
-    }
+    },
+
+    -- Navigate Between Search Matches
+    {
+      "kevinhwang91/nvim-hlslens",
+      config = function()
+        require("plugins.hlslens").config()
+      end,
+      event = "BufReadPost",
+    },
 
   }
 end
