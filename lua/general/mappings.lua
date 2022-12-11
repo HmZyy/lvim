@@ -137,6 +137,7 @@ H.config = function()
         "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
         "Colorscheme with Preview",
       },
+      s = { require("ssr").open, "Search And Replace" },
     },
     L = {
       name = '+Latex',

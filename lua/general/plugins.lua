@@ -122,6 +122,24 @@ H.config = function()
       },
     },
 
+    -- Structural search and replace
+    {
+      "cshuaimin/ssr.nvim",
+      config = function()
+        require("ssr").setup {
+          min_width = 50,
+          min_height = 5,
+          keymaps = {
+            close = "q",
+            next_match = "n",
+            prev_match = "N",
+            replace_all = "<leader><cr>",
+          },
+        }
+      end,
+      event = { "BufReadPost", "BufNew" },
+    },
+
   }
 end
 return H
