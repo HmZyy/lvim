@@ -106,6 +106,10 @@ H.config = function()
       end,
     },
 
+    -- LateX
+    { "lervag/vimtex" },
+    { "kdheepak/cmp-latex-symbols" },
+
   }
 end
 return H
