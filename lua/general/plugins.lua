@@ -110,6 +110,18 @@ H.config = function()
     { "lervag/vimtex" },
     { "kdheepak/cmp-latex-symbols" },
 
+    -- Fancy Display For Vim Messages/CMD
+    {
+      "folke/noice.nvim",
+      config = function()
+        require("plugins.noice").config()
+      end,
+      requires = {
+        "MunifTanjim/nui.nvim",
+        "rcarriga/nvim-notify",
+      },
+    },
+
   }
 end
 return H
