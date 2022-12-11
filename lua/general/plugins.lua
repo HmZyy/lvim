@@ -98,6 +98,14 @@ H.config = function()
       ft = { "csv" },
     },
 
+    -- Vim LSP Progress
+    {
+      "j-hui/fidget.nvim",
+      config = function()
+        require("plugins.fidget").config()
+      end,
+    },
+
   }
 end
 return H
