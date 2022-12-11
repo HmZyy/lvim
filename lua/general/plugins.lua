@@ -92,6 +92,12 @@ H.config = function()
       event = "BufReadPost",
     },
 
+    -- CSV
+    {
+      "chrisbra/csv.vim",
+      ft = { "csv" },
+    },
+
   }
 end
 return H
