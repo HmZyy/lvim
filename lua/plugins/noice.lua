@@ -48,7 +48,7 @@ M.config = function()
     },
     lsp = {
       progress = {
-        enabled = false,
+        enabled = true,
         format = {
           { "{data.progress.percentage} ", hl_group = "Comment" },
           { "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
@@ -72,8 +72,8 @@ M.config = function()
           icon = " ",
           conceal = true,
           opts = {
-            -- relative = "cursor",
-            -- size = { min_width = 20 },
+            relative = "cursor",
+            size = { min_width = 20 },
             -- position = { row = -3, col = 0 },
             buf_options = { filetype = "text" },
           },
@@ -94,8 +94,16 @@ M.config = function()
         },
       },
     },
+    messages = {
+      enabled = true, -- enables the Noice messages UI
+      view = false, -- default view for messages
+      view_error = "notify", -- view for errors
+      view_warn = "notify", -- view for warnings
+      view_history = "messages", -- view for :messages
+      view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+    },
     popupmenu = {
-      -- enabled = true
+      enabled = true
     },
     routes = {
       {
